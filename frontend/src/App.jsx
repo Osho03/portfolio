@@ -12,7 +12,7 @@ import {
 } from 'react-icons/fa';
 import {
   SiJavascript,
-  SiMongodb,
+  SiMysql,
   SiPostgresql,
 } from 'react-icons/si';
 import { VscCode } from 'react-icons/vsc';
@@ -99,7 +99,7 @@ const skillGroups = [
   {
     title: '🗄️ Databases',
     skills: [
-      { name: 'MongoDB', icon: SiMongodb, style: 'mongodb' },
+      { name: 'MySQL', icon: SiMysql, style: 'mysql' },
       { name: 'PostgreSQL', icon: SiPostgresql, style: 'postgresql' },
     ],
   },
@@ -133,8 +133,6 @@ const socialLinks = [
     style: 'github',
   },
 ];
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -262,7 +260,7 @@ function App() {
               </span>
             </motion.a>
             <motion.div className="resume-actions" variants={fadeInUp}>
-              <a className="resume-action resume-download" href="/Osho-M-Resume.png" download="Osho-M-Resume.png">Download Resume</a>
+              <a className="resume-action resume-download" href="/Osho-Resume.pdf" download="Osho-Resume.pdf">Download Resume</a>
               <button className="resume-action resume-view" type="button" onClick={() => setIsResumeOpen(true)}>View Resume</button>
             </motion.div>
           </div>
@@ -274,9 +272,9 @@ function App() {
         <motion.section id="about" className="about-section" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeInUp}>
           <div className="about-content">
             <h2>About Me</h2>
-            <p>I'm a final-year Computer Science and Engineering student at Mailam Engineering College with a strong interest in AI, Machine Learning, and Software Development.</p>
-            <p>From intelligent applications to full-stack web platforms, I enjoy building projects that blend creativity with technology.</p>
-            <p>Every project is an opportunity to learn, innovate, and contribute to the future of digital solutions.</p>
+            <p>I'm a final-year Computer Science and Engineering student at Mailam Engineering College and a full-stack developer focused on AI-integrated web and mobile applications.</p>
+            <p>I enjoy taking an idea from problem to deployment with Python, Flutter, React, and modern web technologies.</p>
+            <p>My work combines a strong foundation in data structures and problem-solving with a growing focus on AI, ML, and LLM integration.</p>
           </div>
         </motion.section>
 
@@ -332,6 +330,16 @@ function App() {
                     </svg>
                     <span>View on GitHub</span>
                   </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div className="project-card" variants={fadeInUp}>
+              <div className="project-content">
+                <h3 className="animated-title">Sarcasm Detection in News Headlines</h3>
+                <p className="project-desc">A hybrid CNN-LSTM model with GloVe word embeddings for detecting sarcasm in news headlines. The project reached 81.4% accuracy on unseen headlines and includes evaluation charts and a desktop GUI.</p>
+                <div className="tech-stack">
+                  <span>Python</span><span>TensorFlow/Keras</span><span>GloVe</span><span>NLTK</span><span>scikit-learn</span><span>PyQt5</span>
                 </div>
               </div>
             </motion.div>
@@ -455,12 +463,12 @@ function App() {
             <div className="resume-modal-header">
               <h2>Resume</h2>
               <div className="resume-modal-controls">
-                <a href="/Osho-M-Resume.png" download="Osho-M-Resume.png">Download</a>
+                <a href="/Osho-Resume.pdf" download="Osho-Resume.pdf">Download</a>
                 <button type="button" onClick={() => setIsResumeOpen(false)} aria-label="Close resume preview">Close</button>
               </div>
             </div>
             <div className="resume-frame">
-              <img src="/Osho-M-Resume.png" alt="Osho M. resume" />
+              <iframe src="/Osho-Resume.pdf" title="Osho M. resume" />
             </div>
           </section>
         </div>

@@ -1413,11 +1413,20 @@ a.contact-card:hover {
     overflow-y: auto;
 }
 
-.resume-frame img {
+.resume-frame img,
+.resume-frame iframe {
     display: block;
     width: min(100%, 850px);
-    height: auto;
     margin: 0 auto;
+}
+
+.resume-frame iframe {
+    min-height: 75vh;
+    border: 0;
+}
+
+.resume-frame img {
+    height: auto;
 }
 
 .footer-socials {
