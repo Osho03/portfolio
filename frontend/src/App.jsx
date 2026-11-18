@@ -335,6 +335,9 @@ function App() {
             </motion.div>
 
             <motion.div className="project-card" variants={fadeInUp}>
+              <div className="project-image-gallery">
+                <img src="/sarcasm-detection.jpeg" alt="Sarcasm Detection desktop application" className="project-img" />
+              </div>
               <div className="project-content">
                 <h3 className="animated-title">Sarcasm Detection in News Headlines</h3>
                 <p className="project-desc">A hybrid CNN-LSTM model with GloVe word embeddings for detecting sarcasm in news headlines. The project reached 81.4% accuracy on unseen headlines and includes evaluation charts and a desktop GUI.</p>
